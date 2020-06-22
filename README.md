@@ -8,12 +8,13 @@ and will be placed under specified path.
 
 ## Use cases
 
-* You have documentation for your desktop app
-  available via your main site as usual and want to reuse the same pages
+* You want to keep documentation for your desktop app
+  available via app’s main site (as usual), while reusing the same pages
   in context of app’s built-in web-based help, similar to e.g. what Xcode does.
 
-  In this scenario you may want new pages to provide the same content
-  in a different layout (perhaps excluding some page elements).
+  In this scenario you’d likely want to have your in-app documentation
+  provide the same content, but in a slightly different layout
+  (for example, excluding some page elements).
 
 * You want to output machine-readable JSON for each document.
 
