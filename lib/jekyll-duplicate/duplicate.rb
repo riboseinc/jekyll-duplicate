@@ -6,21 +6,26 @@ module Jekyll
       @content = content
 
       if format == 'html'
-        if path.end_with?('/index')
-          @dir = url_prefix
-        else
-          @dir = File.join(url_prefix, path)
-        end
+        @dir = File.join(url_prefix, path)
         @name = "index.html"
+        permalink = path
 
       elsif format == 'json'
-        @dir = File.join(url_prefix)
+        @dir = url_prefix
+
+        if path.end_with?('/')
+          path.chomp!('/')
+        end
+
         @name = "#{path}.json"
+        permalink = File.join(@dir, @name)
       end
 
       self.process(@name)
 
       self.data = data.clone
+
+      self.data["permalink"] = permalink
 
       if overrides
         if overrides['frontmatter']
